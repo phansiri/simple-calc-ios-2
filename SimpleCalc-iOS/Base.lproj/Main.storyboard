@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,11 +18,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fsp-ic-iIp">
-                                <rect key="frame" x="70" y="186" width="180" height="263"/>
+                                <rect key="frame" x="363.5" y="36" width="180" height="263"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="DWP-LQ-fff">
                                         <rect key="frame" x="0.0" y="0.0" width="180" height="23"/>
@@ -225,13 +225,13 @@
                                 <variation key="heightClass=regular-widthClass=regular" spacing="65"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHq-UA-wA8">
-                                <rect key="frame" x="150.5" y="100" width="19" height="36"/>
+                                <rect key="frame" x="174" y="100" width="19" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simple Calc - iOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGO-93-Ada">
-                                <rect key="frame" x="31" y="28" width="258" height="33"/>
+                                <rect key="frame" x="56" y="28" width="255" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="258" id="9PC-U5-x6b">
                                         <variation key="heightClass=compact-widthClass=compact" constant="255"/>
@@ -246,10 +246,17 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pHq-UA-wA8" firstAttribute="centerX" secondItem="VGO-93-Ada" secondAttribute="centerX" id="UmR-kG-0zS"/>
-                            <constraint firstItem="VGO-93-Ada" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="adf-kX-Qqc"/>
+                            <constraint firstItem="VGO-93-Ada" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="adf-kX-Qqc">
+                                <variation key="heightClass=compact-widthClass=compact" constant="-150"/>
+                            </constraint>
                             <constraint firstItem="VGO-93-Ada" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="fZs-eI-GfV"/>
-                            <constraint firstItem="fsp-ic-iIp" firstAttribute="centerX" secondItem="pHq-UA-wA8" secondAttribute="centerX" id="isI-On-lSK"/>
-                            <constraint firstItem="fsp-ic-iIp" firstAttribute="top" secondItem="pHq-UA-wA8" secondAttribute="bottom" constant="50" id="lsW-yW-ZgB"/>
+                            <constraint firstItem="fsp-ic-iIp" firstAttribute="centerX" secondItem="pHq-UA-wA8" secondAttribute="centerX" id="isI-On-lSK">
+                                <variation key="heightClass=compact-widthClass=compact" constant="270"/>
+                            </constraint>
+                            <constraint firstItem="fsp-ic-iIp" firstAttribute="top" secondItem="pHq-UA-wA8" secondAttribute="bottom" constant="50" id="lsW-yW-ZgB">
+                                <variation key="heightClass=compact-widthClass=compact" constant="-100"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="10"/>
+                            </constraint>
                             <constraint firstItem="pHq-UA-wA8" firstAttribute="top" secondItem="VGO-93-Ada" secondAttribute="bottom" constant="39" id="q6u-wn-W66"/>
                         </constraints>
                     </view>
