@@ -56,7 +56,6 @@ class SimpleCalcTableViewController: UITableViewController {
         let record = self.records[indexPath.row]
         cell.textLabel?.text = record["data"] as? String
 
-        
         // Configure the cell...
 
         return cell
