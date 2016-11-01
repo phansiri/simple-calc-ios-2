@@ -35,6 +35,7 @@ class ViewController: UIViewController {
     var countFunction: Int = 1
     var averageFunction: Int = 1
     var numberArray = [String]()
+    var history = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +76,14 @@ class ViewController: UIViewController {
     
     @IBAction func equalsButton(sender: AnyObject) {
         performOperation(operation: currentOperation)
+        let defaults = UserDefaults.standard
+        var records = defaults.array(forKey: "records")
+        if records == nil {
+            records = Array()
+        }
+        records?.append(["data": history])
+        defaults.set(records, forKey: "records")
+        
     }
     
     @IBAction func countButton(sender: AnyObject) {
@@ -127,17 +136,23 @@ class ViewController: UIViewController {
                 // only happen if valOne and valTwo have values in them.
                 if currentOperation == .Multiply { // test if operation passed is Multiply
                     result = "\(Double(valOne)! * Double(valTwo)!)"
+                    history += "+ \(valTwo) = \(result)"
                 } else if currentOperation == .Divide {
                     result = "\(Double(valOne)! / Double(valTwo)!)"
+                    history += "/ \(valTwo) = \(result)"
                 } else if currentOperation == .Subtract {
                     result = "\(Double(valOne)! - Double(valTwo)!)"
+                    history += "- \(valTwo) = \(result)"
                 } else if currentOperation == .Add {
                     result = "\(Double(valOne)! + Double(valTwo)!)"
+                    history += "+ \(valTwo) = \(result)"
                 } else if currentOperation == .Mod {
                     result = "\(Int(valOne)! % Int(valTwo)!)"
+                    history += "% \(valTwo) = \(result)"
                 } else if currentOperation == .Count {
                     countFunction += 1
                     result = String(countFunction)
+                    history += "Count" + "  = \(result)"
                 } else if currentOperation == .Average {
                     numberArray.append(valTwo)
 //                    print(numberArray)
@@ -146,6 +161,7 @@ class ViewController: UIViewController {
                         sum += Int(index)!
                     }
                     result = "\(sum / numberArray.count)"
+                    history += "Average" + "  = \(result)"
                 }
                 // results is added to valOne for current running number
                 valOne = result
@@ -154,6 +170,7 @@ class ViewController: UIViewController {
             }
         } else { // there is no number in valOne
             valOne = tempStoredNumber
+            history = tempStoredNumber + " "
             tempStoredNumber = ""
             currentOperation = operation
         }
