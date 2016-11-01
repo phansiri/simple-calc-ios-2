@@ -76,6 +76,9 @@ class ViewController: UIViewController {
     
     @IBAction func equalsButton(sender: AnyObject) {
         performOperation(operation: currentOperation)
+        if currentOperation == .Count {
+            history = "Count: \(history) = \(result)"
+        }
         let defaults = UserDefaults.standard
         var records = defaults.array(forKey: "records")
         if records == nil {
@@ -83,6 +86,7 @@ class ViewController: UIViewController {
         }
         records?.append(["data": history])
         defaults.set(records, forKey: "records")
+        history = ""
         
     }
     
@@ -91,18 +95,28 @@ class ViewController: UIViewController {
     }
     
     @IBAction func factButton(sender: AnyObject) {
+        history = "fact:"
+        
         let factorialNumber = Int(tempStoredNumber)!
         if factorialNumber == 0 {
             result = "1"
-            
         } else {
             for index in 1...factorialNumber {
+                history += " \(index)"
                 averageFunction *= index
             }
             result = "\(averageFunction)"
+            history += " = \(result)"
         }
         outputLabel.text = result
-
+        let defaults = UserDefaults.standard
+        var records = defaults.array(forKey: "records")
+        if records == nil {
+            records = Array()
+        }
+        records?.append(["data": history])
+        defaults.set(records, forKey: "records")
+        history = ""
     }
     
     @IBAction func averageButton(sender: AnyObject) {
@@ -124,6 +138,7 @@ class ViewController: UIViewController {
         countFunction = 1
         averageFunction = 1
         numberArray = [String]()
+        history = ""
         
     }
 
@@ -132,7 +147,6 @@ class ViewController: UIViewController {
             if tempStoredNumber != "" { // test if tempStoreNumber is not empty, that means there is a value in tempStoreNmber so add it to valTwo
                 valTwo = tempStoredNumber // adding to valTwo
                 tempStoredNumber = "" // clearing out tempStoredNumber
-                
                 // only happen if valOne and valTwo have values in them.
                 if currentOperation == .Multiply { // test if operation passed is Multiply
                     result = "\(Double(valOne)! * Double(valTwo)!)"
@@ -152,21 +166,19 @@ class ViewController: UIViewController {
                 } else if currentOperation == .Count {
                     countFunction += 1
                     result = String(countFunction)
-                    history += "Count" + "  = \(result)"
+                    history += "\(valTwo) "
                 } else if currentOperation == .Average {
                     numberArray.append(valTwo)
-//                    print(numberArray)
                     var sum = 0
                     for index in numberArray {
                         sum += Int(index)!
                     }
-                    result = "\(sum / numberArray.count)"
-                    history += "Average" + "  = \(result)"
+                    result = "\(sum) / \(numberArray.count) = \(sum / numberArray.count)"
+                    history = "Avg: \(result)"
                 }
                 // results is added to valOne for current running number
                 valOne = result
                 outputLabel.text = result
-                
             }
         } else { // there is no number in valOne
             valOne = tempStoredNumber
@@ -175,7 +187,6 @@ class ViewController: UIViewController {
             currentOperation = operation
         }
     }
-
-
+    
 }
 

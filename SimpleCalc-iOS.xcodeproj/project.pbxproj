@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0C220EEA1DC90AE300067175 /* SimpleCalcTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C220EE91DC90AE300067175 /* SimpleCalcTableViewController.swift */; };
-		0C220EEC1DC90AF400067175 /* SimpleCalcTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C220EEB1DC90AF400067175 /* SimpleCalcTableViewCell.swift */; };
 		0C933D411DB9A83C0034F098 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C933D401DB9A83C0034F098 /* AppDelegate.swift */; };
 		0C933D431DB9A83C0034F098 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C933D421DB9A83C0034F098 /* ViewController.swift */; };
 		0C933D461DB9A83C0034F098 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C933D441DB9A83C0034F098 /* Main.storyboard */; };
@@ -37,7 +36,6 @@
 
 /* Begin PBXFileReference section */
 		0C220EE91DC90AE300067175 /* SimpleCalcTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCalcTableViewController.swift; sourceTree = "<group>"; };
-		0C220EEB1DC90AF400067175 /* SimpleCalcTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCalcTableViewCell.swift; sourceTree = "<group>"; };
 		0C933D3D1DB9A83C0034F098 /* SimpleCalc-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SimpleCalc-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C933D401DB9A83C0034F098 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C933D421DB9A83C0034F098 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 				0C933D491DB9A83C0034F098 /* LaunchScreen.storyboard */,
 				0C933D4C1DB9A83C0034F098 /* Info.plist */,
 				0C220EE91DC90AE300067175 /* SimpleCalcTableViewController.swift */,
-				0C220EEB1DC90AF400067175 /* SimpleCalcTableViewCell.swift */,
 			);
 			path = "SimpleCalc-iOS";
 			sourceTree = "<group>";
@@ -194,7 +191,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Lit Phansiri";
 				TargetAttributes = {
 					0C933D3C1DB9A83C0034F098 = {
@@ -268,7 +265,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C220EEC1DC90AF400067175 /* SimpleCalcTableViewCell.swift in Sources */,
 				0C933D431DB9A83C0034F098 /* ViewController.swift in Sources */,
 				0C933D411DB9A83C0034F098 /* AppDelegate.swift in Sources */,
 				0C220EEA1DC90AE300067175 /* SimpleCalcTableViewController.swift in Sources */,
@@ -344,6 +340,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -393,6 +390,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
